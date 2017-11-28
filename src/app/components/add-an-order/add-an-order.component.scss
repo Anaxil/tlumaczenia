@@ -1,0 +1,27 @@
+.form-inline {
+    //position: absolute;
+    margin-bottom: 1.5rem;
+}
+
+.form-inline .prefix {
+    transition: color 0.2s;
+    //position: relative;
+    width: 2.3rem;
+    font-size: 1.5rem;
+    padding-top: .5rem;
+}
+
+.form-inline > div {
+    padding-bottom: 0.2rem;
+    padding-top: 0.2rem;
+    font-size: 0.8rem;
+    line-height: 0.5;
+    border-bottom: 1px solid #bdbdbd;
+    display: flex;
+    width: calc(100% - 3rem);
+}
+
+.form-inline label {
+    color: #757575;
+    font-size: 0.9rem;
+}
