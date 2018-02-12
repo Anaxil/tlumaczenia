@@ -1,3 +1,155 @@
-<p>
-  orders-list works!
-</p>
+<div class="container-80">
+  <div class="row">
+
+    <table class="table table-hover" id="orders-list">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Klient</th>
+          <th>Status</th>
+          <th>Rodzaj</th>
+          <th>Data zlecenia</th>
+          <th>Data zakończenia</th>
+          <th>Język</th>
+          <th>Uwagi</th>
+          <th>Cena dla klienta</th>
+          <th>Ilość znaków</th>
+          <th>Akcje</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{order.id}}</td>
+          <td>
+            <a [routerLink]="['/order', order.id]">{{order.customer.firstName}} {{order.customer.lastName}}</a>
+          </td>
+          <td>{{order.status}}</td>
+          <!-- <td><div class="type">{{order.type}}</div></td> -->
+          <td>
+            <i *ngIf="order.type=='P'" class="red-text fa fa-exclamation-circle" data-placement="top" data-toggle="tooltip" title="Przysięgłe"></i>
+            <i *ngIf="order.type=='Z'" class="blue-text fa fa-cog" data-placement="top" data-toggle="tooltip" title="Zwykłe"></i>
+          </td>
+          <td>{{order.startDate}}</td>
+          <td>{{order.endDate}}</td>
+          <td>
+            <span class="flag-icon flag-icon-gr"></span>{{order.sourceLang}} => {{order.destLang}}</td>
+          <td>{{order.comments}}</td>
+          <td>{{order.customerPrice}}</td>
+          <td>{{order.characters}}</td>
+          <td>
+            <!-- <a class="blue-text" data-placement="top" data-toggle="tooltip" title="See results"><i class="fa fa-user"></i></a> -->
+            <a class="teal-text" data-placement="top" data-toggle="tooltip" title="Edytuj" (click)="select(order); fluid.show()">
+              <i class="fa fa-pencil"></i>
+            </a>
+            <a class="red-text" data-placement="top" data-toggle="tooltip" title="Usuń" (click)="delete(order)">
+              <i class="fa fa-times"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<!--ngx-datatable
+  problemy z własnymi rodzajami w komórkach
+<div class="container">
+  <div class="row">
+    <ngx-datatable
+    [rows]="orders"
+    [columns]="columns"
+    [messages]="tableMessages"
+    >
+    Ładowanie...
+    </ngx-datatable>
+    </div>
+  </div>
+  <button type="button" (click)="but()">Klik</button>
+-->
+
+<!-- <button type="button" class="btn btn-primary waves-light" data-toggle="modal" data-target="#basicExample" (click)="fluid.show();" mdbRippleRadius>
+    Right
+</button> -->
+
+
+<!-- <orders-list-details *ngIf="selected" [order]="selected"></orders-list-details> -->
+
+<!-- MODAL order-details -->
+
+<div mdbModal #fluid="mdb-modal" class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-full-height modal-right modal-odrder-details" role="document" *ngIf="selected">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">Szczegóły zlecenia nr {{selected.id}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="fluid.hide();">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+
+          <div class="form-group row">
+            <label for="customer" class="col-sm-2 col-form-label">Imię:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" [(ngModel)]="selected.customer.firstName" placeholder="Imię" name="firstName">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="customer" class="col-sm-2 col-form-label">Nazwisko:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" [(ngModel)]="selected.customer.lastName" placeholder="Nazwisko" name="lastName">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="customer" class="col-sm-2 col-form-label">Status:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" [(ngModel)]="selected.status" placeholder="status" name="status">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="customer" class="col-sm-2 col-form-label">Uwagi:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" [(ngModel)]="selected.comments" placeholder="comments" name="comments">
+            </div>
+          </div>
+        </form>
+
+        <ul class="list-group z-depth-0">
+          <li class="list-group-item justify-content-between">
+            Cras justo odio
+            <span class="badge badge-primary badge-pill">14</span>
+          </li>
+          <li class="list-group-item justify-content-between">
+            Dapibus ac facilisis in
+            <span class="badge badge-primary badge-pill">2</span>
+          </li>
+          <li class="list-group-item justify-content-between">
+            Morbi leo risus
+            <span class="badge badge-primary badge-pill">1</span>
+          </li>
+          <li class="list-group-item justify-content-between">
+            Cras justo odio
+            <span class="badge badge-primary badge-pill">14</span>
+          </li>
+          <li class="list-group-item justify-content-between">
+            Dapibus ac facilisis in
+            <span class="badge badge-primary badge-pill">2</span>
+          </li>
+          <li class="list-group-item justify-content-between">
+            Morbi leo risus
+            <span class="badge badge-primary badge-pill">1</span>
+          </li>
+        </ul>
+
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-primary waves-light" mdbRippleRadius (click)="save(); fluid.hide();">Save changes</button>
+          <button type="button" class="btn btn-secondary waves-light" data-dismiss="modal" (click)="fluid.hide();" mdbRippleRadius>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END MODAL order-details -->

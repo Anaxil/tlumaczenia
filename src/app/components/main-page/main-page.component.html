@@ -5,9 +5,9 @@
           <h1 class="mb-5">{{title}}</h1>
   
           <div>
-            <a href="/addorder" class="btn btn-warning" (click) = "$event.stopPropagation()">Dodaj zlecenie</a>
-            <a href="/orderslist" type="button" class="btn btn-warning">Lista zleceń</a>
-            <a href="/anotherlink" type="button" class="btn btn-warning">Kontrahenci</a>
+            <a [routerLink]="['/addorder']" class="btn btn-warning">Dodaj zlecenie</a>
+            <a [routerLink]="['/orderslist']" type="button" class="btn btn-warning">Lista zleceń</a>
+            <a [routerLink]="['/anotherlink']" type="button" class="btn btn-warning">Kontrahenci</a>
           </div>
   
           <div>

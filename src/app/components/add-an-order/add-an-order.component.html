@@ -1,111 +1,133 @@
-<div class="container my-4">
+<div class="container my-5">
   <div class="row">
-    <div class="col text-center">
-      <p class="h2">Nowe zamówienie</p>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-6">
-        <div class="h3 text-center mb-4">
-            <i class="fa fa-book fa" aria-hidden="true"></i>
-            <span>Nr zamówienia: {{orderId}}</span>
-          </div>
-      <div class="md-form form-sm">
-        <i class="fa fa-comment-o prefix grey-text"></i>
-        <input type="text" id="languageFrom" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
-        <label for="languageFrom">Z języka</label>
-      </div>
-
-      <div class="md-form form-sm">
-        <i class="fa fa-comments-o prefix grey-text"></i>
-        <input type="text" id="languageTo" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
-        <label for="languageTo">Na język</label>
-      </div>
-
-      <div class="form-inline form-sm">
-        <i class="fa fa-cogs prefix grey-text"></i>
-        <div class="py-2">
-          <label class="mr-3">Rodzaj tłumaczenia: </label>
-          <div class="form-group">
-            <input name="group1" type="radio" id="radio11" checked="checked" class="mr-1">
-            <label for="radio11">przysięgłe</label>
+    <div class="col">
+      <div class="card wow fadeIn" data-wow-delay="0.3s">
+        <div class="card-body">
+          <div class="form-header peach-gradient">
+            <h3>
+              <i class="fa fa-user mt-2 mb-2"></i> Nowe zamówienie:</h3>
           </div>
 
-          <div class="form-group">
-            <input name="group1" type="radio" id="radio21" class="mr-1">
-            <label for="radio21">zwykle</label>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="h3 text-center mb-4">
+                <i class="fa fa-book fa" aria-hidden="true"></i>
+                <span>Nr zamówienia: {{orderId}}</span>
+              </div>
+              <div class="md-form form-sm">
+                <i class="fa fa-comment-o prefix grey-text"></i>
+                <input type="text" id="languageFrom" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                <label for="languageFrom">Z języka</label>
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fa fa-comments-o prefix grey-text"></i>
+                <input type="text" id="languageTo" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                <label for="languageTo">Na język</label>
+              </div>
+
+              <div class="form-inline form-sm">
+                <i class="fa fa-cogs prefix grey-text"></i>
+                <div class="py-2">
+                  <label class="mr-3">Rodzaj tłumaczenia: </label>
+                  <div class="form-group">
+                    <input name="group1" type="radio" id="radio11" checked="checked" class="mr-1">
+                    <label for="radio11">przysięgłe</label>
+                  </div>
+
+                  <div class="form-group">
+                    <input name="group1" type="radio" id="radio21" class="mr-1">
+                    <label for="radio21">zwykle</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fa fa-paperclip prefix grey-text"></i>
+                <textarea type="text" id="attachments" class="md-textarea" (blur)="inActive($event)" (focus)="active($event)"></textarea>
+                <label for="attachments">Załączniki (opis)</label>
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fa fa-align-justify prefix grey-text"></i>
+                <textarea type="text" id="notes" class="md-textarea" (blur)="inActive($event)" (focus)="active($event)"></textarea>
+                <label for="notes">Uwagi</label>
+              </div>
+
+            </div>
+            <div class="col-6">
+              <div class="h3 text-center mb-4">
+                <i class="fa fa-address-card-o fa" aria-hidden="true"></i>
+                <span>Dane klienta: </span>
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fa fa-user-o prefix grey-text"></i>
+                <input type="text" id="firstName" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                <label for="firstName">Imię</label>
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fa fa-user  prefix grey-text"></i>
+                <input type="text" id="lastName" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                <label for="lastName">Nazwisko</label>
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fa fa-building-o prefix grey-text"></i>
+                <input type="text" id="address" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                <label for="address">Adres</label>
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fa fa-car prefix grey-text"></i>
+                <input type="text" id="postal" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                <label for="postal">Kod pocztowy</label>
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fa fa-bank prefix grey-text"></i>
+                <input type="text" id="city" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                <label for="city">Miasto</label>
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fa fa-phone prefix grey-text"></i>
+                <input type="text" id="phone" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                <label for="phone">Telefon</label>
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input type="text" id="email" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                <label for="email">email</label>
+              </div>
+
+            </div>
+            <div class="col text-center">
+              <div class="text-center">
+                <button class="btn btn-success">Zapisz</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="md-form form-sm">
-        <i class="fa fa-paperclip prefix grey-text"></i>
-        <textarea type="text" id="attachments" class="md-textarea" (blur)="inActive($event)" (focus)="active($event)"></textarea>
-        <label for="attachments">Załączniki (opis)</label>
-      </div>
-
-      <div class="md-form form-sm">
-        <i class="fa fa-align-justify prefix grey-text"></i>
-        <textarea type="text" id="notes" class="md-textarea" (blur)="inActive($event)" (focus)="active($event)"></textarea>
-        <label for="notes">Uwagi</label>
-      </div>
-
-    </div>
-    <div class="col-6">
-      <div class="h3 text-center mb-4">
-        <i class="fa fa-address-card-o fa" aria-hidden="true"></i>
-        <span>Dane klienta: </span>
-      </div>
-
-      <div class="md-form form-sm">
-        <i class="fa fa-user-o prefix grey-text"></i>
-        <input type="text" id="firstName" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
-        <label for="firstName">Imię</label>
-      </div>
-
-      <div class="md-form form-sm">
-        <i class="fa fa-user  prefix grey-text"></i>
-        <input type="text" id="lastName" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
-        <label for="lastName">Nazwisko</label>
-      </div>
-
-      <div class="md-form form-sm">
-        <i class="fa fa-building-o prefix grey-text"></i>
-        <input type="text" id="address" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
-        <label for="address">Adres</label>
-      </div>
-
-      <div class="md-form form-sm">
-        <i class="fa fa-car prefix grey-text"></i>
-        <input type="text" id="postal" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
-        <label for="postal">Kod pocztowy</label>
-      </div>
-
-      <div class="md-form form-sm">
-        <i class="fa fa-bank prefix grey-text"></i>
-        <input type="text" id="city" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
-        <label for="city">Miasto</label>
-      </div>
-
-      <div class="md-form form-sm">
-        <i class="fa fa-phone prefix grey-text"></i>
-        <input type="text" id="phone" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
-        <label for="phone">Telefon</label>
-      </div>
-
-      <div class="md-form form-sm">
-        <i class="fa fa-envelope prefix grey-text"></i>
-        <input type="text" id="email" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
-        <label for="email">email</label>
-      </div>
-
-    </div>
-    <div class="col text-center">
-      <div class="text-center">
-        <button class="btn btn-success">Zapisz</button>
-      </div>
     </div>
   </div>
-
 </div>
+
+<p>Simple datepicker</p>
+
+<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+
+<hr/>
+
+<button class="btn btn-sm btn-outline-primary" (click)="selectToday()">Select Today</button>
+<button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo()">To current month</button>
+<button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
+
+<hr/>
+
+<pre>Month: {{ date.month }}.{{ date.year }}</pre>
+<pre>Model: {{ model | json }}</pre>

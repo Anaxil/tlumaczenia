@@ -1,0 +1,122 @@
+{
+    "orders": [
+        {
+            "id": 1,
+            "customer": {
+                "id": 1,
+                "firstName": "Jan",
+                "lastName": "Kowalski",
+                "address": "Polna 1/23",
+                "postal": "78-200",
+                "city": "Białogard",
+                "phone": "123456789",
+                "email": "test@test.pl"
+            },
+            "status": "przyjęte",
+            "type": "P",
+            "startDate": "2018-01-02",
+            "endDate": "2018-01-10",
+            "sourceLang": "angielski",
+            "destLang": "polski",
+            "comments": "proszę o pilne tłumaczenie, max 3 dni",
+            "customerPrice": 80,
+            "characters": 589,
+            "interpreterPrice": null,
+            "attachments": "dowód osobisty, umowa kupna-sprzedaży, brief"
+        },
+        {
+            "id": 2,
+            "customer": {
+                "id": 2,
+                "firstName": "Maria",
+                "lastName": "Nowak",
+                "address": "Rolna 8",
+                "postal": "78-230",
+                "city": "Karlino",
+                "phone": "88888888",
+                "email": "m.nowak@test.pl"
+            },
+            "status": "u tłumacza",
+            "type": "Z",
+            "startDate": "2018-02-05",
+            "endDate": "",
+            "sourceLang": "polski",
+            "destLang": "niemiecki",
+            "comments": "na uczelnię, max 50zł",
+            "customerPrice": null,
+            "characters": 350,
+            "interpreterPrice": 20,
+            "attachments": "dyplom, CV"
+        },
+        {
+            "id": 3,
+            "customer": {
+                "id": 10,
+                "firstName": "Bolek",
+                "lastName": "Smiały",
+                "address": "Średniowieczna 22",
+                "postal": "11-111",
+                "city": "Kraków",
+                "phone": "brak numeru",
+                "email": "bolek.smialy@krakow.pl"
+            },
+            "status": "przetłumaczone",
+            "type": "P",
+            "startDate": "2018-01-25",
+            "endDate": "2018-01-30",
+            "sourceLang": "polski",
+            "destLang": "słowiański",
+            "comments": "Bardzo Ważny Dokument (BWD)",
+            "customerPrice": 1000,
+            "characters": 35350,
+            "interpreterPrice": 200,
+            "attachments": "traktat"
+        },
+        {
+            "id": 4,
+            "customer": {
+                "id": 2,
+                "firstName": "Mikołaj",
+                "lastName": "Kopernik",
+                "address": "Żytnia 2",
+                "postal": "55-555",
+                "city": "Toruń",
+                "phone": "123456789",
+                "email": "m.koper@test.pl"
+            },
+            "status": "błąd",
+            "type": "Z",
+            "startDate": "2018-02-12",
+            "endDate": "",
+            "sourceLang": "angielski",
+            "destLang": "polski",
+            "comments": "przekład odkrycia",
+            "customerPrice": null,
+            "characters": null,
+            "interpreterPrice": null,
+            "attachments": "jakiś dokument"
+        }                
+    ],
+    "customers": [
+        {
+            "id": 1,
+            "firstName": "Jan",
+            "lastName": "Kowalski",
+            "address": "Polna 1/23",
+            "postal": "78-200",
+            "city": "Białogard",
+            "phone": "123456789",
+            "email": "test@test.pl"
+        },
+        {
+            "id": 2,
+            "firstName": "Maria",
+            "lastName": "Nowak",
+            "address": "Rolna 8",
+            "postal": "78-230",
+            "city": "Karlino",
+            "phone": "88888888",
+            "email": "m.nowak@test.pl"
+        }
+    ]
+}

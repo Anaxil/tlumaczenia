@@ -1,0 +1,27 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark orange" [containerInside]="true">
+    <logo>
+        <a class="logo navbar-brand" href="#"><strong>Tłumaczenia</strong></a>    
+    </logo>
+    <links>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link" [routerLink]="['dodajzlecenie']">Dodaj zlecenie</a>
+            </li>
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link" [routerLink]="['listazlecen']">Lista zleceń</a>
+            </li>
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link" [routerLink]="['kontrahenci']">Kontrahenci</a>
+            </li>
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link" [routerLink]="['tlumacze']">Tłumacze</a>
+            </li>
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link" [routerLink]="['statystyki']">Statystyki</a>
+            </li>
+            <li class="nav-item waves-light" mdbRippleRadius>
+                <a class="nav-link" [routerLink]="['wyloguj']">Wyloguj</a>
+            </li>
+        </ul>
+    </links>
+</mdb-navbar>

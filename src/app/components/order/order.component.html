@@ -1,0 +1,278 @@
+<div class="container my-4">
+    <div class="row">
+      <div class="col">
+        <div class="card wow fadeIn" data-wow-delay="0.3s">
+          <div class="card-body">
+            <div class="form-header peach-gradient">
+              <h3>
+                <i class="fa fa-user mt-2 mb-2"></i> Szczegóły zamówienia:</h3>
+            </div>
+  
+  
+            <div class="row">
+              <div class="col-6" *ngIf="order">
+
+                <div class="h3 text-center mb-4">
+                  <i class="fa fa-book fa" aria-hidden="true"></i>
+                  <span>Nr zamówienia: {{order.id}}</span>
+                </div>
+                <div class="md-form form-sm">
+                  <i class="fa fa-comment-o prefix grey-text"></i>
+                  <input type="text" id="sourceLang" [(ngModel)]="order.sourceLang" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                  <label for="sourceLang">Z języka</label>
+                </div>
+  
+                <div class="md-form form-sm">
+                  <i class="fa fa-comments-o prefix grey-text"></i>
+                  <input type="text" id="destLang" [(ngModel)]="order.destLang" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                  <label for="destLang">Na język</label>
+                </div>
+  
+                <div class="form-inline form-sm">
+                  <i class="fa fa-cogs prefix grey-text"></i>
+                  <div class="py-2">
+                    <label class="mr-3">Rodzaj tłumaczenia: </label>
+                    <div class="form-group">
+                      <input name="group1" type="radio" id="radio11" checked="checked" class="mr-1">
+                      <label for="radio11">przysięgłe</label>
+                    </div>
+  
+                    <div class="form-group">
+                      <input name="group1" type="radio" id="radio21" class="mr-1">
+                      <label for="radio21">zwykle</label>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="md-form form-sm">
+                  <i class="fa fa-paperclip prefix grey-text"></i>
+                  <textarea type="text" id="attachments" [(ngModel)]="order.attachments" class="md-textarea" (blur)="inActive($event)" (focus)="active($event)"></textarea>
+                  <label for="attachments">Załączniki (opis)</label>
+                </div>
+  
+                <div class="md-form form-sm">
+                  <i class="fa fa-align-justify prefix grey-text"></i>
+                  <textarea type="text" id="comments" [(ngModel)]="order.comments" class="md-textarea" (blur)="inActive($event)" (focus)="active($event)"></textarea>
+                  <label for="comments">Uwagi</label>
+                </div>
+
+<!--bootstrap
+<div class="form-group row">
+    <label for="example-text-input" class="col-2 col-form-label">Text</label>
+    <div class="col-10">
+      <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-search-input" class="col-2 col-form-label">Search</label>
+    <div class="col-10">
+      <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-email-input" class="col-2 col-form-label">Email</label>
+    <div class="col-10">
+      <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-url-input" class="col-2 col-form-label">URL</label>
+    <div class="col-10">
+      <input class="form-control" type="url" value="https://getbootstrap.com" id="example-url-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
+    <div class="col-10">
+      <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-password-input" class="col-2 col-form-label">Password</label>
+    <div class="col-10">
+      <input class="form-control" type="password" value="hunter2" id="example-password-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-number-input" class="col-2 col-form-label">Number</label>
+    <div class="col-10">
+      <input class="form-control" type="number" value="42" id="example-number-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
+    <div class="col-10">
+      <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-date-input" class="col-2 col-form-label">Date</label>
+    <div class="col-10">
+      <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-month-input" class="col-2 col-form-label">Month</label>
+    <div class="col-10">
+      <input class="form-control" type="month" value="2011-08" id="example-month-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-week-input" class="col-2 col-form-label">Week</label>
+    <div class="col-10">
+      <input class="form-control" type="week" value="2011-W33" id="example-week-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-time-input" class="col-2 col-form-label">Time</label>
+    <div class="col-10">
+      <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-color-input" class="col-2 col-form-label">Color</label>
+    <div class="col-10">
+      <input class="form-control" type="color" value="#563d7c" id="example-color-input">
+    </div>
+  </div>
+-->
+
+              </div>
+              <div class="col-6" *ngIf="customer">
+                <div class="h3 text-center mb-4">
+                  <i class="fa fa-address-card-o fa" aria-hidden="true"></i>
+                  <span>Dane klienta: </span>
+                </div>
+  
+                <div class="md-form form-sm">
+                  <i class="fa fa-user-o prefix grey-text"></i>
+                  <span class="label">Imię: </span>
+                  <input type="text" id="firstName" [(ngModel)]="customer.firstName" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                  <!--<label for="firstName">Imię</label>-->
+                </div>
+  
+                <div class="md-form form-sm">
+                  <i class="fa fa-user  prefix grey-text"></i>
+                  <input type="text" id="lastName" [(ngModel)]="customer.lastName" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                  <label for="lastName">Nazwisko</label>
+                </div>
+  
+                <div class="md-form form-sm">
+                  <i class="fa fa-building-o prefix grey-text"></i>
+                  <input type="text" id="address" [(ngModel)]="customer.address" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                  <label for="address">Adres</label>
+                </div>
+  
+                <div class="md-form form-sm">
+                  <i class="fa fa-car prefix grey-text"></i>
+                  <input type="text" id="postal" [(ngModel)]="customer.postal" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                  <label for="postal">Kod pocztowy</label>
+                </div>
+  
+                <div class="md-form form-sm">
+                  <i class="fa fa-bank prefix grey-text"></i>
+                  <input type="text" id="city" [(ngModel)]="customer.city" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                  <label for="city">Miasto</label>
+                </div>
+  
+                <div class="md-form form-sm">
+                  <i class="fa fa-phone prefix grey-text"></i>
+                  <input type="text" id="phone" [(ngModel)]="customer.phone" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                  <label for="phone">Telefon</label>
+                </div>
+  
+                <div class="md-form form-sm">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <input type="text" id="email" [(ngModel)]="customer.email" class="form-control" (blur)="inActive($event)" (focus)="active($event)">
+                  <label for="email">email</label>
+                </div>
+  
+              </div>
+              <div class="col text-center">
+                <div class="text-center">
+                  <button class="btn btn-success">Zapisz</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p>Simple datepicker</p>
+  
+  <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+  
+  <hr/>
+  
+  <button class="btn btn-sm btn-outline-primary" (click)="selectToday()">Select Today</button>
+  <button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo()">To current month</button>
+  <button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
+  
+  <hr/>
+  
+  <pre>Month: {{ date.month }}.{{ date.year }}</pre>
+  <pre>Model: {{ model | json }}</pre>
+
+  <!-- modal -->
+    <!-- Central Modal Medium Success -->
+    <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">Modal Success</p>
+    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+    
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla aperiam blanditiis ad consequatur in dolores culpa, dignissimos, eius non possimus fugiat. Esse ratione fuga, enim,
+                            ab officiis totam.</p>
+                    </div>
+                </div>
+    
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" class="btn btn-primary-modal">Get it now <i class="fa fa-diamond ml-1"></i></a>
+                    <a type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal">No, thanks</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Central Modal Medium Success-->
+    <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#centralModalSuccess">Central Modal</button>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
