@@ -12,8 +12,8 @@
                 "phone": "123456789",
                 "email": "test@test.pl"
             },
-            "status": "przyjęte",
-            "type": "P",
+            "status": 0,
+            "type": 1,
             "startDate": "2018-01-02",
             "endDate": "2018-01-10",
             "sourceLang": "angielski",
@@ -36,8 +36,8 @@
                 "phone": "88888888",
                 "email": "m.nowak@test.pl"
             },
-            "status": "u tłumacza",
-            "type": "Z",
+            "status": 7,
+            "type": 0,
             "startDate": "2018-02-05",
             "endDate": "",
             "sourceLang": "polski",
@@ -60,8 +60,8 @@
                 "phone": "brak numeru",
                 "email": "bolek.smialy@krakow.pl"
             },
-            "status": "przetłumaczone",
-            "type": "P",
+            "status": 8,
+            "type": 1,
             "startDate": "2018-01-25",
             "endDate": "2018-01-30",
             "sourceLang": "polski",
@@ -84,8 +84,8 @@
                 "phone": "123456789",
                 "email": "m.koper@test.pl"
             },
-            "status": "błąd",
-            "type": "Z",
+            "status": 4,
+            "type": 0,
             "startDate": "2018-02-12",
             "endDate": "",
             "sourceLang": "angielski",

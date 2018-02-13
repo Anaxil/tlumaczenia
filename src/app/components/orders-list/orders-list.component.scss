@@ -2,6 +2,10 @@ tr {
     cursor: pointer;
 }
 
+.min100px {
+    min-width: 100px;
+}
+
 #orders-list {
     text-align: center;
 }
@@ -52,4 +56,16 @@ tr {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     margin: 0;
     height: initial;
+}
+
+.selectType {
+    font-family: 'FontAwesome', 'Arial';
+  }
+
+.selectType option:first-child {
+    color:blue;
+}
+
+.selectType option {
+    color: red;
 }

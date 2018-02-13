@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { AppComponent } from './app.component';
 import { AddAnOrderComponent } from './components/add-an-order/add-an-order.component';
@@ -37,7 +37,8 @@ import { OrdersListDetailsComponent } from './components/orders-list/orders-list
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [ CustomersService, OrdersService],
   schemas: [ NO_ERRORS_SCHEMA ],
