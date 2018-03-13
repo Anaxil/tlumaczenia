@@ -1,4 +1,4 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark orange" [containerInside]="true">
+<navbar class="navbar navbar-expand-lg navbar-dark" [containerInside]="true">
     <logo>
         <a class="logo navbar-brand" href="#"><strong>Tłumaczenia</strong></a>    
     </logo>
@@ -8,7 +8,7 @@
                 <a class="nav-link" [routerLink]="['dodajzlecenie']">Dodaj zlecenie</a>
             </li>
             <li class="nav-item waves-light" mdbRippleRadius>
-                <a class="nav-link" [routerLink]="['listazlecen']">Lista zleceń</a>
+                <a class="nav-link active" [routerLink]="['listazlecen']">Lista zleceń</a>
             </li>
             <li class="nav-item waves-light" mdbRippleRadius>
                 <a class="nav-link" [routerLink]="['kontrahenci']">Kontrahenci</a>
@@ -24,4 +24,4 @@
             </li>
         </ul>
     </links>
-</mdb-navbar>
+</navbar>

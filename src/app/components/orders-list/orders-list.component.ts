@@ -6,6 +6,8 @@ import { CustomersService } from '../../Customers/customers.service';
 import { Customer } from '../../Customers/customer';
 import 'rxjs/add/operator/mergeMap';
 import { isObject } from 'util';
+import { BsDatepickerConfig, BsLocaleService } from 'ngx-bootstrap/datepicker';
+
 
 enum translations {
   Zwykłe,
@@ -15,7 +17,7 @@ enum translations {
 @Component({
   selector: 'orders-list',
   templateUrl: './orders-list.component.html',
-  styleUrls: ['./orders-list.component.scss']
+  styleUrls: ['./orders-list.component.css']
 })
 export class OrdersListComponent implements OnInit {
 
@@ -61,7 +63,8 @@ export class OrdersListComponent implements OnInit {
   }
 */
   constructor(private ordersService: OrdersService,
-              private customersService: CustomersService) {
+              private customersService: CustomersService,
+              private localeService: BsLocaleService) {
   }
 
   ngOnInit() {
@@ -71,6 +74,8 @@ export class OrdersListComponent implements OnInit {
     });
     this.statuses = Object.values(this.statusesJSON);
     delete this.statusesJSON;
+
+    this.localeService.use('pl');
   }
 
   isSworn(type) {

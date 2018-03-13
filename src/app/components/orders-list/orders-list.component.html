@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let order of orders" (click)="select(order); orderDetails.show()">
+        <tr *ngFor="let order of orders">
           <td>{{order.id}}</td>
           <td>
             {{order.customer.firstName}} {{order.customer.lastName}}
@@ -42,11 +42,11 @@
           <td>{{order.characters}}</td>
           <td>
             <!-- <a class="blue-text" data-placement="top" data-toggle="tooltip" title="See results"><i class="fa fa-user"></i></a> -->
-            <a class="teal-text" data-placement="top" data-toggle="tooltip" title="Edytuj" (click)="select(order); orderDetails.show()">
-              <i class="fa fa-pencil"></i>
+            <a data-placement="top" data-toggle="tooltip" title="Edytuj" (click)="select(order); orderDetails.show()">
+              <i class="fa fa-pencil teal-text"></i>
             </a>
-            <a class="red-text" data-placement="top" data-toggle="tooltip" title="Usuń" (click)="select(order); deleteOrder.show()">
-              <i class="fa fa-times"></i>
+            <a data-placement="top" data-toggle="tooltip" title="Usuń" (click)="select(order); deleteOrder.show()">
+              <i class="fa fa-times red-text"></i>
             </a>
           </td>
         </tr>
@@ -78,7 +78,7 @@
 
 <!-- MODAL order-details -->
 
-<div mdbModal #orderDetails="mdb-modal" class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<!-- <div mdbModal #orderDetails="mdb-modal" class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-full-height modal-right modal-odrder-details" role="document" *ngIf="selected">
     <div class="modal-content">
@@ -141,13 +141,13 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- END MODAL order-details -->
 
 <!-- MODAL delete order warinng -->
 
-<div mdbModal #deleteOrder="mdb-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div bsModal #deleteOrder="bs-modal" class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-notify modal-danger" role="document" *ngIf="selected">
     <div class="modal-content">
@@ -174,4 +174,82 @@
 </div>
 
 <!-- END MODAL delete order warinng -->
-   
+    
+<div bsModal #orderDetails="bs-modal" class="modal right fade" tabindex="-1" role="dialog" aria-labelledby="Szczegóły zlecenia" aria-hidden="true">
+  <div class="modal-dialog modal-lg" *ngIf="selected">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title w-100" id="myModalLabel">Szczegóły zlecenia nr {{selected.id}}</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="orderDetails.hide();">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+    
+              <div class="form-group row">
+                <label for="firstName" class="col-sm-2 col-form-label">Imię:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" [(ngModel)]="selected.customer.firstName" placeholder="Imię" name="firstName">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="lastName" class="col-sm-2 col-form-label">Nazwisko:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" [(ngModel)]="selected.customer.lastName" placeholder="Nazwisko" name="lastName">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="status" class="col-sm-2 col-form-label">Status:</label>
+                <div class="col-sm-10">
+                  <select class="form-control" name="status" [(ngModel)]="selected.status">
+                    <option *ngFor="let status of statuses; let i = index" [value]="i">{{status}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label for="type" class="col-sm-2 col-form-label">Rodzaj:</label>
+                  <div class="col-sm-10">
+                      <select class="form-control selectType" name="type" [(ngModel)]="selected.type" [style.color]="selected.type == 1 ? 'red' : 'blue'">
+                          <option value="0">&#xf013; Zwykłe</option>
+                          <option value="1">&#xf06a; Przysięgłe</option>
+                        </select>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="type" class="col-sm-2 col-form-label">Data zlecenia:</label>
+                  <div class="col-sm-10">
+                  </div>
+              </div>          
+    
+              <div class="form-group row">
+                <label for="customer" class="col-sm-2 col-form-label">Uwagi:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" [(ngModel)]="selected.comments" placeholder="comments" name="comments">
+                </div>
+              </div>
+            </form>
+    
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-primary waves-light" mdbRippleRadius (click)="orderDetails.hide(); save()">Save changes</button>
+              <button type="button" class="btn btn-secondary waves-light" data-dismiss="modal" (click)="orderDetails.hide();" mdbRippleRadius>Close</button>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+      <input type="text"
+             class="form-control"
+             [minDate]="minDate"
+             [maxDate]="maxDate"
+             #dp="bsDatepicker"
+             bsDatepicker [(bsValue)]="bsValue">
+    </div>
+    <div class="col-xs-12 col-12 col-md-3 form-group">
+      <button class="btn btn-success" (click)="dp.toggle()">Date Picker</button>
+    </div>
+  </div>
+  <br>

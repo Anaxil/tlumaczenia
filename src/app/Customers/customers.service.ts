@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Customer } from './customer';
-import config from '../config/config.json'
+import config from '../config/config';
 
 @Injectable()
 export class CustomersService {

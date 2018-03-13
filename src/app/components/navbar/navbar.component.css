@@ -1,0 +1,8 @@
+.navbar {
+    background-color: #ef6c00;
+    justify-content: center;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}

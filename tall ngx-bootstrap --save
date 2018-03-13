@@ -1,0 +1,35 @@
+[33mcommit 6c6e0d1f058353b3f7f603fb619ecf490ab89ad6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Grzegorz Janiszewski <zamowienia@biurotfc.pl>
+Date:   Tue Feb 13 15:28:35 2018 +0100
+
+    working part of orderDetail form, cannot get MDBDatepicker
+
+[33mcommit 0f7078edbd2ae015faea40231b57e6db40846aec[m
+Author: Grzegorz Janiszewski <zamowienia@biurotfc.pl>
+Date:   Mon Feb 12 15:31:43 2018 +0100
+
+    modal for delete-order
+
+[33mcommit 5155d5f4629282aa100fd06b71f77f8d338d5f0d[m
+Author: Grzegorz Janiszewski <zamowienia@biurotfc.pl>
+Date:   Tue Nov 28 16:20:17 2017 +0100
+
+    order form
+
+[33mcommit 4b7c9f8f29d5897f57bbf05ab19c2f8b047387e4[m
+Author: Grzegorz Janiszewski <zamowienia@biurotfc.pl>
+Date:   Fri Nov 24 12:48:47 2017 +0100
+
+    main navigation
+
+[33mcommit 78830e5dda82b58b33c0063cf3165945dc3a4551[m
+Author: Grzegorz Janiszewski <zamowienia@biurotfc.pl>
+Date:   Fri Nov 24 11:06:47 2017 +0100
+
+    initial commit, added mdb boodstrap
+
+[33mcommit 7d806b07b21d4bc1b9b212744166b686eb7cdc12[m
+Author: Angular CLI <angular-cli@angular.io>
+Date:   Fri Nov 24 10:42:35 2017 +0100
+
+    chore: initial commit from @angular/cli

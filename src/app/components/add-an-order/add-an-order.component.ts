@@ -6,7 +6,7 @@ const now = new Date();
 @Component({
   selector: 'add-an-order',
   templateUrl: './add-an-order.component.html',
-  styleUrls: ['./add-an-order.component.scss']
+  styleUrls: ['./add-an-order.component.css']
 })
 export class AddAnOrderComponent implements OnInit {
 

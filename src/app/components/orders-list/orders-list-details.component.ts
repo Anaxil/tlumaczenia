@@ -5,7 +5,7 @@ import { Order } from './order';
 @Component({
   selector: 'orders-list-details',
   templateUrl: './orders-list-details.component.html',
-  styleUrls: ['./orders-list-details.component.scss']
+  styleUrls: ['./orders-list-details.component.css']
 })
 export class OrdersListDetailsComponent implements OnInit {
 
