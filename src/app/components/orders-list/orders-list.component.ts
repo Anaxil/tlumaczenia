@@ -8,7 +8,6 @@ import 'rxjs/add/operator/mergeMap';
 import { isObject } from 'util';
 import { BsDatepickerConfig, BsLocaleService } from 'ngx-bootstrap/datepicker';
 
-
 enum translations {
   Zwykłe,
   Przysięgłe
@@ -62,23 +61,31 @@ export class OrdersListComponent implements OnInit {
     totalMessage: 'Razem'
   }
 */
+
+
   constructor(private ordersService: OrdersService,
               private customersService: CustomersService,
               private localeService: BsLocaleService) {
   }
 
+  
   ngOnInit() {
-    this.ordersService.getOrders()
+    // this.ordersService.getOrders()
+    //   .subscribe((orders: Order[]) => {
+    //     this.orders = orders;
+    // });
+    this.ordersService.getOrdersStream()
       .subscribe((orders: Order[]) => {
         this.orders = orders;
     });
     this.statuses = Object.values(this.statusesJSON);
     delete this.statusesJSON;
 
-    this.localeService.use('pl');
-  }
+      this.localeService.use('pl');
 
-  isSworn(type) {
+  }
+  
+  isCertified(type) {
     return type === translations.Przysięgłe;
   }
 
@@ -124,6 +131,7 @@ export class OrdersListComponent implements OnInit {
     //   this.selected = JSON.parse(JSON.stringify(order));
     // }
     // this.selectedIndex = this.orders.indexOf(order);
+    console.log(this.selected);
   }
 
   clear() {
@@ -133,6 +141,7 @@ export class OrdersListComponent implements OnInit {
 
   save() {
     this.orders[this.selectedIndex] = JSON.parse(JSON.stringify(this.selected));
+    console.log(this.selected);
     this.clear();
   }
 

@@ -13,7 +13,7 @@
                 "email": "test@test.pl"
             },
             "status": 0,
-            "type": 1,
+            "certified": 1,
             "startDate": "2018-01-02",
             "endDate": "2018-01-10",
             "sourceLang": "angielski",
@@ -37,7 +37,7 @@
                 "email": "m.nowak@test.pl"
             },
             "status": 7,
-            "type": 0,
+            "certified": 0,
             "startDate": "2018-02-05",
             "endDate": "",
             "sourceLang": "polski",
@@ -61,7 +61,7 @@
                 "email": "bolek.smialy@krakow.pl"
             },
             "status": 8,
-            "type": 1,
+            "certified": 1,
             "startDate": "2018-01-25",
             "endDate": "2018-01-30",
             "sourceLang": "polski",
@@ -85,7 +85,7 @@
                 "email": "m.koper@test.pl"
             },
             "status": 4,
-            "type": 0,
+            "certified": 0,
             "startDate": "2018-02-12",
             "endDate": "",
             "sourceLang": "angielski",

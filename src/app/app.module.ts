@@ -18,10 +18,11 @@ import { CustomersService } from './Customers/customers.service';
 import { OrderComponent } from './components/order/order.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { OrdersListDetailsComponent } from './components/orders-list/orders-list-details.component';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { defineLocale } from 'ngx-bootstrap/chronos';
-import { deLocale } from 'ngx-bootstrap/locale';
-defineLocale('pl', deLocale);
+import { plLocale } from 'ngx-bootstrap/locale';
+defineLocale('pl', plLocale);
+
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ defineLocale('pl', deLocale);
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot()
   ],
-  providers: [ CustomersService, OrdersService],
+  providers: [ CustomersService, OrdersService, BsLocaleService],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent],
 })
